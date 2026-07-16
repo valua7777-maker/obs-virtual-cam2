@@ -42,6 +42,34 @@ CUnknown *WINAPI CreateInstance4(LPUNKNOWN lpunk, HRESULT *phr)
 	return punk;
 }
 
+CUnknown *WINAPI CreateInstance5(LPUNKNOWN lpunk, HRESULT *phr) // ★ added
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV5, ModeVideo5);
+	return punk;
+}
+
+CUnknown *WINAPI CreateInstance6(LPUNKNOWN lpunk, HRESULT *phr) // ★ added
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV6, ModeVideo6);
+	return punk;
+}
+
+CUnknown *WINAPI CreateInstance7(LPUNKNOWN lpunk, HRESULT *phr) // ★ added
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV7, ModeVideo7);
+	return punk;
+}
+
+CUnknown *WINAPI CreateInstance8(LPUNKNOWN lpunk, HRESULT *phr) // ★ added
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV8, ModeVideo8);
+	return punk;
+}
+
 CVCam::CVCam(LPUNKNOWN lpunk, HRESULT *phr, const GUID id, int mode)
 	: CSource(NAME("OBS Virtual CAM"), lpunk, id)
 {
